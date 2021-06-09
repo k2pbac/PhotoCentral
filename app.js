@@ -126,13 +126,13 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
-    if (res.locals.path !== undefined) {
+    if (req.path !== undefined) {
         res.locals.path = req.path;
     }
     else {
         res.locals.path = "/";
     }
-    if (res.locals.user !== undefined) {
+    if (req.user !== undefined) {
         res.locals.user = req.user;
     }
     else {
