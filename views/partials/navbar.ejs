@@ -17,7 +17,7 @@
                             href="/photos/new">New Photo</a>
             </div>
             <div class="navbar-nav ms-auto">
-                <% if (typeof(user) !=="undefined" ) {%>
+                <% if (typeof(user)=="undefined" ) {%>
                     <a <% if(path=="/register" ){ %> class="nav-link active" <% } else {%> class="nav-link" <%} %>
                                 href="/register">Register</a>
                     <a <% if(path=="/login" ){ %> class="nav-link active" <% } else {%> class="nav-link" <%} %>

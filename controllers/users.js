@@ -29,6 +29,7 @@ module.exports.userLogin = async (req, res) => {
 
 module.exports.userLogout = (req, res) => {
     req.logout();
+    delete res.locals.user;
     req.flash("success", "Logged you out!");
     res.redirect("/photos");
 };
