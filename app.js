@@ -126,8 +126,18 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
-    res.locals.path = req.path;
-    res.locals.user = req.user;
+    if (res.locals.path !== undefined) {
+        res.locals.path = req.path;
+    }
+    else {
+        res.locals.path = "/";
+    }
+    if (res.locals.user !== undefined) {
+        res.locals.user = req.user;
+    }
+    else {
+        res.locals.user = "";
+    }
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next();
