@@ -128,14 +128,17 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req, res, next) => {
     if (req.path !== undefined) {
         res.locals.path = req.path;
+        console.log(req.path);
     }
     else {
         res.locals.path = "/";
     }
     if (req.user !== undefined) {
         res.locals.user = req.user;
+        console.log(req.user);
     }
     else {
+        console.log(req.user);
         res.locals.user = "";
     }
     res.locals.success = req.flash('success');
