@@ -40,7 +40,6 @@ db.once("open", () => {
 
 const app = express();
 
-app.use(console.log("hello"));
 
 app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs');
