@@ -19,8 +19,7 @@ module.exports.createUser = async (req, res, next) => {
         req.flash('error', e.message);
         res.redirect('register');
     }
-}
-    };
+};
 
 module.exports.renderLoginForm = (req, res) => {
     res.render("users/login");
