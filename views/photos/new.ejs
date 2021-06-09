@@ -1,0 +1,57 @@
+<% layout("layouts/boilerplate") %>
+
+    <div class="row">
+        <h1 class="text-center">New Photo</h1>
+
+        <div class="col-6 offset-3 mb-4">
+
+            <form class="needs-validation" action="/photos" method="POST" novalidate enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="name">Photo Name:</label>
+                    <input class="form-control" name="photo[name]" id="name" type="text" placeholder="Photo name"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location:</label>
+                    <input class="form-control" name="photo[location]" id="location" type="text" placeholder="Location"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Add Images</label>
+                    <input class="form-control" type="file" id="image" name="image" multiple>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="date">Date Captured:</label>
+                    <input class="form-control" name="photo[dateCaptured]" id="date" type="text" placeholder="Date"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Photo Description:</label>
+                    <textarea class="form-control" name="photo[description]" id="description" type="text"
+                        required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-1">
+                    <button class="btn btn-success">New Post</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>

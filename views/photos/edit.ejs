@@ -1,0 +1,71 @@
+<% layout("layouts/boilerplate") %>
+
+    <div class="row mb-3">
+        <h1 class="text-center">Edit Photo</h1>
+
+        <div class="col-6 offset-3">
+
+            <form class="needs-validation" enctype="multipart/form-data" action="/photos/<%= photo._id %>?_method=PUT"
+                method="POST" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="name">Photo Name:</label>
+                    <input class="form-control" value="<%= photo.name %>" name="photo[name]" id="name" type="text"
+                        placeholder="Photo Name" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Photo Location:</label>
+                    <input class="form-control" value="<%= photo.location %>" name="photo[location]" id="location"
+                        type="text" placeholder="Description" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Add Images</label>
+                        <input class="form-control" type="file" id="image" name="image" multiple>
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="date">Date Captured:</label>
+                    <input class="form-control" value="<%= photo.dateCaptured %>" name="photo[dateCaptured]" id="date"
+                        type="text" placeholder="Date" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Photo Description:</label>
+                    <textarea class="form-control" name="photo[description]" id="description" type="text"
+                        required><%= photo.description %></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <% photo.images.forEach(function(img, i) { %>
+                        <img src="<%= img.thumbnail %>" alt="" class="img-thumbnail">
+                        <div class="form-check-inline">
+                            <input type="checkbox" name="deleteImages[]" value="<%= img.filename %>"
+                                id="deletePhoto<%=i %>">
+                            <label for="photo<%=i %>">Delete</label>
+                        </div>
+                        <% }) %>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Update Photo</button>
+                </div>
+
+            </form>
+
+            <a class="btn btn-secondary" href="/photos/<%= photo._id %>">Back to photo</a>
+
+        </div>
+
+    </div>

@@ -1,0 +1,31 @@
+<nav class="navbar sticky-top navbar-expand-lg sticky-top navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">PhotoCentral</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+                <a <% if(path=="/" ){ %> class="nav-link active" <% } else {%> class="nav-link" <%} %> href="/">Home</a>
+                <a <% if(path=="/photos" ){ %> class="nav-link active" <% } else {%> class="nav-link" <%} %>
+                            href="/photos">Photos</a>
+                <a <% if(path=="/photos/new" ){ %> class="nav-link active" <% } else {%> class="nav-link" <%} %>
+                            href="/photos/new">New Photo</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <% if (!user) {%>
+                    <a <% if(path=="/register" ){ %> class="nav-link active" <% } else {%> class="nav-link" <%} %>
+                                href="/register">Register</a>
+                    <a <% if(path=="/login" ){ %> class="nav-link active" <% } else {%> class="nav-link" <%} %>
+                                href="/login">Login</a>
+                    <% } else {%>
+                        <span class="navbar-text">
+                            Welcome, <%= user.username[0].toUpperCase() + user.username.slice(1) %>
+                        </span>
+                        <a class="nav-link" href="/logout">Logout</a>
+                        <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

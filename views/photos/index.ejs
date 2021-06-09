@@ -1,0 +1,37 @@
+<% layout("layouts/boilerplate") %>
+
+    <div class="row">
+        <div class="col-8 mx-auto">
+            <h1 class="display-3 text-center mb-5">All Photos</h1>
+            <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-2 g-2">
+
+                <% for (const photo of photos) { %>
+                    <div class="col">
+                        <div class="card mb-3 text-center">
+
+
+                            <img class="img-fluid w-100" style="height: 20vw; object-fit: cover;"
+                                src="<%= photo.images[0].url %>" alt="unknown">
+
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= photo.name %>
+                                </h5>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        <%= photo.location %>
+                                    </small>
+                                </p>
+                                <a href="/photos/<%= photo._id %>" class="button1 my-auto">View <%= photo.name %>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <% } %>
+            </div>
+
+        </div>
+    </div>
+    <%- // https://imgur.com/a/9HR2crf %>
