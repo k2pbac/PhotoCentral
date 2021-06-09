@@ -18,9 +18,11 @@
             </div>
             <div class="navbar-nav ms-auto">
                 <% if (typeof(user)=="undefined" ) {%>
-                    <a <% if(path=="/register" ){ %> class="nav-link active" <% } else {%> class="nav-link" <%} %>
+                    <a <% if(typeof(path) !=="undefined" &&path=="/register" ){ %> class="nav-link active" <% } else {%>
+                            class="nav-link" <%} %>
                                 href="/register">Register</a>
-                    <a <% if(path=="/login" ){ %> class="nav-link active" <% } else {%> class="nav-link" <%} %>
+                    <a <% if(typeof(path) !=="undefined" &&path=="/login" ){ %> class="nav-link active" <% } else {%>
+                            class="nav-link" <%} %>
                                 href="/login">Login</a>
                     <% } else {%>
                         <span class="navbar-text">
