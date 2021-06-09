@@ -91,6 +91,8 @@ const styleSrcUrls = [
     "https://api.tiles.mapbox.com/",
     "https://fonts.googleapis.com/",
     "https://use.fontawesome.com/",
+    "https://cdn.jsdelivr.net",
+    "https://cdnjs.cloudflare.com/",
 ];
 const connectSrcUrls = [
     "https://api.mapbox.com/",
