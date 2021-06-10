@@ -9,6 +9,7 @@ module.exports.createUser = async (req, res, next) => {
     const { username, email, password } = req.body;
     const user = await new User({ email, username });
     const newUser = await User.register(user, password);
+    console.log("TESTTTTTTTTTTTTTTTTTTTTTTT");
     res.send(newUser);
 
     // try {
