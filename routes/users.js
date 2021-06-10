@@ -4,7 +4,7 @@ const passport = require("passport");
 
 //Error Handlers
 const catchAsync = require("../utils/catchAsync");
-
+const User = require('../models/user');
 const userController = require("../controllers/users");
 
 router.route("/register")

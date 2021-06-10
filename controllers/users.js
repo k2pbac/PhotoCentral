@@ -14,7 +14,7 @@ module.exports.createUser = async (req, res, next) => {
             if (err) return next();
         });
         req.flash("success", "Welcome to Photo Central!");
-        res.redirect("/photos");
+        res.send(newUser);
     } catch (e) {
         req.flash('error', e.message);
         res.redirect('register');
