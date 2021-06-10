@@ -3,15 +3,14 @@
     <div class="row">
         <div class="col-8 mx-auto">
             <h1 class="display-3 text-center mb-5">All Photos</h1>
-            <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-2 g-2">
+            <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-2 g-3">
 
                 <% for (const photo of photos) { %>
                     <div class="col">
                         <div class="card mb-3 text-center">
 
 
-                            <img class="img-fluid w-100" style="height: 20vw; object-fit: cover;"
-                                src="<%= photo.images[0].url %>" alt="unknown">
+                            <img class="w-100 indexImg" src="<%= photo.images[0].url %>" alt="unknown">
 
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -34,4 +33,3 @@
 
         </div>
     </div>
-    <%- // https://imgur.com/a/9HR2crf %>

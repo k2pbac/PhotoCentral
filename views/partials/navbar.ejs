@@ -7,27 +7,29 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav">
-                <a <% if(typeof(path) !=="undefined" && path=="/" ){ %> class="nav-link active" <% } else {%>
+                <a <% if(typeof(path) !=="undefined" && path=="/" ){ %> class="nav-link text-white" <% } else {%>
                         class="nav-link" <%} %> href="/">Home</a>
-                <a <% if(typeof(path) !=="undefined" &&path=="/photos" ){ %> class="nav-link active" <% } else {%>
+                <a <% if(typeof(path) !=="undefined" &&path=="/photos" ){ %> class="nav-link text-white" <% } else {%>
                         class="nav-link" <%} %>
                             href="/photos">Photos</a>
-                <a <% if(typeof(path) !=="undefined" &&path=="/photos/new" ){ %> class="nav-link active" <% } else {%>
+                <a <% if(typeof(path) !=="undefined" &&path=="/photos/new" ){ %> class="nav-link text-white" <% } else
+                        {%>
                         class="nav-link" <%} %>
                             href="/photos/new">New Photo</a>
             </div>
-            <div class="navbar-nav ms-auto">
+            <div class="navbar-nav ms-auto mx-4">
                 <% if (typeof(user)=="undefined" ) {%>
-                    <a <% if(typeof(path) !=="undefined" &&path=="/register" ){ %> class="nav-link active" <% } else {%>
+                    <a <% if(typeof(path) !=="undefined" && path=="/register" ){ %> class="nav-link text-white" <% }
+                            else {%>
                             class="nav-link" <%} %>
                                 href="/register">Register</a>
-                    <a <% if(typeof(path) !=="undefined" &&path=="/login" ){ %> class="nav-link active" <% } else {%>
-                            class="nav-link" <%} %>
+                    <a <% if(typeof(path) !=="undefined" && path=="/login" ){ %> class="nav-link text-white" <% } else
+                            {%> class="nav-link" <%} %>
                                 href="/login">Login</a>
                     <% } else {%>
-                        <span class="navbar-text">
+                        <a class="nav-link disabled text-white hideLink">
                             Welcome, <%= user.username[0].toUpperCase() + user.username.slice(1) %>
-                        </span>
+                        </a>
                         <a class="nav-link" href="/logout">Logout</a>
                         <% } %>
             </div>

@@ -1,12 +1,12 @@
 <% layout("layouts/boilerplate") %>
 
     <div class="row mb-3 mt-3">
-        <div class="col-md-5">
+        <div class="col-md-5 col-lg-6">
             <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel" data-interval="false">
                 <div class="carousel-inner">
                     <% photo.images.forEach((img, index)=> { %>
                         <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
-                            <img src="<%= img.url%>" class="img-fluid w-100 showImg" alt="...">
+                            <img src="<%= img.url%>" class="showImg" alt="...">
                         </div>
                         <% }) %>
                 </div>
@@ -53,7 +53,7 @@
                 </div>
                 <% }%>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-7 col-lg-5">
             <% if(user) { %>
                 <form class="mb-5 needs-validation" action="/photos/<%= photo._id %>/reviews" method="POST" novalidate>
                     <div>
