@@ -1,12 +1,12 @@
 <% layout("layouts/boilerplate") %>
 
     <div class="row mb-3 mt-3">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel" data-interval="false">
                 <div class="carousel-inner">
                     <% photo.images.forEach((img, index)=> { %>
                         <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
-                            <img src="<%= img.url%>" class="img-fluid w-75" style="height: 30vw; object-fit: cover;"
+                            <img src="<%= img.url%>" class="img-fluid w-100" style="height: 30vw; object-fit: cover;"
                                 alt="...">
                         </div>
                         <% }) %>
