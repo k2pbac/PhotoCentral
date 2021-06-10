@@ -1,0 +1,7 @@
+
+@media (min-width: 576px) { 
+img.showImg {
+    height: 50vw; 
+    object-fit: cover;
+}
+}
