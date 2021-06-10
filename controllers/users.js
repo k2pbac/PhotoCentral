@@ -6,19 +6,24 @@ module.exports.renderUserForm = (req, res) => {
 };
 
 module.exports.createUser = async (req, res, next) => {
-    try {
-        const { username, email, password } = req.body;
-        const user = await new User({ email, username });
-        const newUser = await User.register(user, password);
-        // req.login(newUser, err => {
-        //     if (err) return next();
-        // });
-        req.flash("success", "Welcome to Photo Central!");
-        res.send(newUser);
-    } catch (e) {
-        req.flash('error', e.message);
-        res.redirect('register');
-    }
+    const { username, email, password } = req.body;
+    const user = await new User({ email, username });
+    const newUser = await User.register(user, password);
+    res.send(newUser);
+
+    // try {
+    //     const { username, email, password } = req.body;
+    //     const user = await new User({ email, username });
+    //     const newUser = await User.register(user, password);
+    //     // req.login(newUser, err => {
+    //     //     if (err) return next();
+    //     // });
+    //     req.flash("success", "Welcome to Photo Central!");
+    //     res.send(newUser);
+    // } catch (e) {
+    //     req.flash('error', e.message);
+    //     res.redirect('register');
+    // }
 };
 
 module.exports.renderLoginForm = (req, res) => {
