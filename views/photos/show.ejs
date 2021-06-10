@@ -6,7 +6,7 @@
                 <div class="carousel-inner">
                     <% photo.images.forEach((img, index)=> { %>
                         <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
-                            <img src="<%= img.url%>" class="img-fluid w-100" style="height: 20vw; object-fit: cover;"
+                            <img src="<%= img.url%>" class="img-fluid w-75" style="height: 30vw; object-fit: cover;"
                                 alt="...">
                         </div>
                         <% }) %>
